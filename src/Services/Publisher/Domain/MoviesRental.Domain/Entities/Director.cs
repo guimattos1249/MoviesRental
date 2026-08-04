@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace MoviesRental.Domain.Entities;
 
-public class Director
+public class Director : Entity
 {
     public Director(string name, string surname)
     {
@@ -26,6 +26,7 @@ public class Director
         if (ValidateName(name))
             throw new DomainException("Director name cannot be empty.");
         Name = name;
+        UpdatedAt = DateTime.UtcNow;
     }
 
     public void UpdateSurname(string surname)
@@ -33,6 +34,7 @@ public class Director
         if (ValidateName(surname))
             throw new DomainException("Director surname cannot be empty.");
         Surname = surname;
+        UpdatedAt = DateTime.UtcNow;
     }
 
     private static bool ValidateName(string name)
