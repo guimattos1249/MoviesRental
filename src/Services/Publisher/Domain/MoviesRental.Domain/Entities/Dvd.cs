@@ -8,7 +8,7 @@ public class Dvd : Entity
 {
     public Dvd() { }
 
-    public Dvd(string title, EGenre genre, DateTime published, int copies, Guid directorId)
+    public Dvd(string title, int genre, DateTime published, int copies, Guid directorId)
     {
         Available = true;
         UpdateTitle(title);
