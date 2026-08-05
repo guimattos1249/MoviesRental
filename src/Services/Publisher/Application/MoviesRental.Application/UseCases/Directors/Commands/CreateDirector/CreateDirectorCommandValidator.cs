@@ -2,7 +2,7 @@
 using MoviesRental.Core.ValidationMessages;
 using MoviesRental.Domain.Entities;
 
-namespace MoviesRental.Application.UseCases.Dvds.Commands.CreateDvd;
+namespace MoviesRental.Application.UseCases.Directors.Commands.CreateDirector;
 
 public class CreateDirectorCommandValidator : AbstractValidator<CreateDirectorCommand>
 {

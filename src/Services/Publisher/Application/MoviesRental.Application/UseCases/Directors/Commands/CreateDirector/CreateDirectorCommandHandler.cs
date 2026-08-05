@@ -2,7 +2,7 @@
 using MoviesRental.Application.Contracts;
 using MoviesRental.Domain.Entities;
 
-namespace MoviesRental.Application.UseCases.Dvds.Commands.CreateDvd;
+namespace MoviesRental.Application.UseCases.Directors.Commands.CreateDirector;
 
 public class CreateDirectorCommandHandler(IDirectorsWriteRepository repository, CreateDirectorCommandValidator validator) : IRequestHandler<CreateDirectorCommand, CreateDirectorResponse>
 {

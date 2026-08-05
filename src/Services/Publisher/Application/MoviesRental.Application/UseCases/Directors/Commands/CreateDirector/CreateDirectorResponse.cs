@@ -1,4 +1,4 @@
-﻿namespace MoviesRental.Application.UseCases.Dvds.Commands.CreateDvd;
+﻿namespace MoviesRental.Application.UseCases.Directors.Commands.CreateDirector;
 
 public record CreateDirectorResponse(string Id,
     string FullName,
