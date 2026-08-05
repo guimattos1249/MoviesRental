@@ -6,4 +6,19 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\MoviesRental.Domain\MoviesRental.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UseCases\Directors\Commands\CreateDirector\" />
+    <Folder Include="UseCases\Directors\Commands\DeleteDirector\" />
+    <Folder Include="UseCases\Directors\Commands\UpdateDirector\" />
+    <Folder Include="UseCases\Dvds\Commands\CreateDvd\" />
+    <Folder Include="UseCases\Dvds\Commands\DeleteDvd\" />
+    <Folder Include="UseCases\Dvds\Commands\ReturnDvd\" />
+    <Folder Include="UseCases\Dvds\Commands\RentDvd\" />
+    <Folder Include="UseCases\Dvds\Commands\UpdateDvd\" />
+  </ItemGroup>
+
 </Project>
