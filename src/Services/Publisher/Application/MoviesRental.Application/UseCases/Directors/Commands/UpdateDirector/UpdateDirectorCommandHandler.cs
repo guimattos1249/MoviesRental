@@ -3,16 +3,10 @@ using MoviesRental.Application.Contracts;
 
 namespace MoviesRental.Application.UseCases.Directors.Commands.UpdateDirector;
 
-public class UpdateDirectorCommandHandler : IRequestHandler<UpdateDirectorCommand, UpdateDirectorResponse>
+public class UpdateDirectorCommandHandler(IDirectorsWriteRepository repository, UpdateDirectorCommandValidator validator) : IRequestHandler<UpdateDirectorCommand, UpdateDirectorResponse>
 {
-    private readonly IDirectorsWriteRepository _repository;
-    private readonly UpdateDirectorCommandValidator _validator;
-
-    public UpdateDirectorCommandHandler(IDirectorsWriteRepository repository, UpdateDirectorCommandValidator validator)
-    {
-        _repository = repository;
-        _validator = validator;
-    }
+    private readonly IDirectorsWriteRepository _repository = repository;
+    private readonly UpdateDirectorCommandValidator _validator = validator;
 
     public async Task<UpdateDirectorResponse> Handle(UpdateDirectorCommand request, CancellationToken cancellationToken)
     {

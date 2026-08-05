@@ -3,14 +3,9 @@ using MoviesRental.Application.Contracts;
 
 namespace MoviesRental.Application.UseCases.Directors.Commands.DeleteDirector;
 
-public class DeleteDirectorCommandHandler : IRequestHandler<DeleteDirectorCommand, bool>
+public class DeleteDirectorCommandHandler(IDirectorsWriteRepository repository) : IRequestHandler<DeleteDirectorCommand, bool>
 {
-    private readonly IDirectorsWriteRepository _repository;
-
-    public DeleteDirectorCommandHandler(IDirectorsWriteRepository repository)
-    {
-        _repository = repository;
-    }
+    private readonly IDirectorsWriteRepository _repository = repository;
 
     public async Task<bool> Handle(DeleteDirectorCommand request, CancellationToken cancellationToken)
     {
