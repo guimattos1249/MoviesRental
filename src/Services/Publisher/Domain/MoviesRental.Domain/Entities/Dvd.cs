@@ -13,9 +13,9 @@ public class Dvd : Entity
         Available = true;
         UpdateTitle(title);
         UpdateGenre(genre);
-        UpdatePublished(published);
+        UpdatePublishedDate(published);
         UpdateCopies(copies);
-        UpdateDirectorId(directorId);
+        UpdateDirector(directorId);
     }
 
     public string Title { get; private set; }
