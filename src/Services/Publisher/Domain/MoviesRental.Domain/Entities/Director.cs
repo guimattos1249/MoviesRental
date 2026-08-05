@@ -11,15 +11,18 @@ public class Director : Entity
         UpdateSurname(surname);
     }
 
-    const int MaxNameLength = 100;
-    const int MinNameLength = 3;
+    public const int MaxNameLength = 100;
+    public const int MinNameLength = 3;
 
     public string Name { get; private set; }
     public string Surname { get; private set; }
     private List<Dvd> _dvds = [];
     public IReadOnlyList<Dvd> Dvds => _dvds.AsReadOnly();
 
-    public string FullName => $"{Name} {Surname}";
+    public string FullName()
+    {
+        return $"{Name} {Surname}";
+    }
 
     public void UpdateName(string name)
     {
