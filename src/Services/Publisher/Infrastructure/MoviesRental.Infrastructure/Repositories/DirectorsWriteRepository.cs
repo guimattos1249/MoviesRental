@@ -1,5 +1,7 @@
-﻿using MoviesRental.Application.Contracts;
+﻿using Microsoft.EntityFrameworkCore;
+using MoviesRental.Application.Contracts;
 using MoviesRental.Domain.Entities;
+using MoviesRental.Infrastructure.Context;
 
 namespace MoviesRental.Infrastructure.Repositories;
 
@@ -19,7 +21,7 @@ public class DirectorsWriteRepository(MoviesRentalWriteContext context) : IDirec
         return await _context.SaveChangesAsync() > 0;
     }
 
-    public async Task<Director> GetAsync(Guid Id) => await _context.DirectorsFindAsync(Id);
+    public async Task<Director> GetAsync(Guid Id) => await _context.Directors.FindAsync(Id);
 
     public async Task<Director> GetDirectorWithMoviesAsync(Guid Id) => await _context
         .Directors
