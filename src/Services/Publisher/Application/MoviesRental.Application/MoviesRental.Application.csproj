@@ -10,8 +10,4 @@
     <ProjectReference Include="..\..\Domain\MoviesRental.Domain\MoviesRental.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="UseCases\Dvds\Commands\UpdateDvd\" />
-  </ItemGroup>
-
 </Project>

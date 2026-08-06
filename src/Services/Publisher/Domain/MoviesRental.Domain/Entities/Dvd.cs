@@ -1,6 +1,5 @@
 ﻿using MoviesRental.Core.DomainObjects;
 using MoviesRental.Domain.Entities.Enums;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MoviesRental.Domain.Entities;
 
