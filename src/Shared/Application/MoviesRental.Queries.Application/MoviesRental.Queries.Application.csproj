@@ -6,4 +6,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\MoviesRental.Queries.Domain\MoviesRental.Queries.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UseCases\Directors\Commands\" />
+    <Folder Include="UseCases\Directors\Queries\" />
+    <Folder Include="UseCases\Dvds\Commands\" />
+    <Folder Include="UseCases\Dvds\Queries\" />
+  </ItemGroup>
+
 </Project>
