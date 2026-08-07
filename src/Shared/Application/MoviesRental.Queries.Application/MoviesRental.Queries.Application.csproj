@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases\Directors\Commands\UpdateDirector\" />
     <Folder Include="UseCases\Directors\Queries\GetDirector\" />
     <Folder Include="UseCases\Dvds\Commands\CreateDvd\" />
     <Folder Include="UseCases\Dvds\Commands\DeleteDvd\" />
