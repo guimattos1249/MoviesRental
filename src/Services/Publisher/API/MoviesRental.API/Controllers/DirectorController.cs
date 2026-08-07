@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using MoviesRental.Application.UseCases.Directors.Commands.CreateDirector;
 using MoviesRental.Application.UseCases.Directors.Commands.DeleteDirector;
 using MoviesRental.Core;
+using MoviesRental.Queries.Application.UseCases.Directors.Queries.GetDirector;
 using System.Net;
 
 namespace MoviesRental.API.Controllers;

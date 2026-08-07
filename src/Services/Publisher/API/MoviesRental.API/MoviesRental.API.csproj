@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Shared\Infrastructure\MoviesRental.Queries.Infrastructure\MoviesRental.Queries.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Infrastructure\MoviesRental.Infrastructure\MoviesRental.Infrastructure.csproj" />
   </ItemGroup>
 
