@@ -7,14 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\MoviesRental.Core\MoviesRental.Core.csproj" />
     <ProjectReference Include="..\..\Domain\MoviesRental.Queries.Domain\MoviesRental.Queries.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases\Directors\Commands\" />
-    <Folder Include="UseCases\Directors\Queries\" />
-    <Folder Include="UseCases\Dvds\Commands\" />
-    <Folder Include="UseCases\Dvds\Queries\" />
+    <Folder Include="UseCases\Directors\Commands\DeleteDirector\" />
+    <Folder Include="UseCases\Directors\Commands\UpdateDirector\" />
+    <Folder Include="UseCases\Directors\Queries\GetDirector\" />
+    <Folder Include="UseCases\Dvds\Commands\CreateDvd\" />
+    <Folder Include="UseCases\Dvds\Commands\DeleteDvd\" />
+    <Folder Include="UseCases\Dvds\Commands\ReturnDvd\" />
+    <Folder Include="UseCases\Dvds\Commands\RentDvd\" />
+    <Folder Include="UseCases\Dvds\Commands\UpdateDvd\" />
+    <Folder Include="UseCases\Dvds\Queries\GetDvd\" />
   </ItemGroup>
 
 </Project>
