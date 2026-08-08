@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <Folder Include="UseCases\Dvds\Commands\CreateDvd\" />
-    <Folder Include="UseCases\Dvds\Commands\DeleteDvd\" />
     <Folder Include="UseCases\Dvds\Commands\ReturnDvd\" />
     <Folder Include="UseCases\Dvds\Commands\RentDvd\" />
     <Folder Include="UseCases\Dvds\Commands\UpdateDvd\" />
