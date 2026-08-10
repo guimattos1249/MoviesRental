@@ -1,16 +1,19 @@
-﻿using MediatR;
+﻿using MassTransit;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using MoviesRental.Application.UseCases.Directors.Commands.CreateDirector;
 using MoviesRental.Application.UseCases.Directors.Commands.DeleteDirector;
 using MoviesRental.Core;
+using MoviesRental.Core.EventBus.Events;
 using MoviesRental.Queries.Application.UseCases.Directors.Queries.GetDirector;
 using System.Net;
 
 namespace MoviesRental.API.Controllers;
 
-public class DirectorController(IMediator mediator) : ApiController
+public class DirectorController(IMediator mediator, IPublishEndpoint publishEndpoint) : ApiController
 {
     private readonly IMediator _mediator = mediator;
+    private readonly IPublishEndpoint _publishEndpoint = publishEndpoint;
 
     [HttpGet("[action]/{fullName}", Name = "GetDirector")]
     [ProducesResponseType(typeof(BaseResponse), (int)HttpStatusCode.OK)]
@@ -37,6 +40,10 @@ public class DirectorController(IMediator mediator) : ApiController
         if (response is null)
             return CustomResponse((int)HttpStatusCode.BadRequest, false, null);
 
+        var @event = new DirectorCreatedEvent(response.Id, response.FullName, response.CreatedAt, response.UpdatedAt);
+
+        await _publishEndpoint.Publish(@event);
+
         return CustomResponse((int)HttpStatusCode.Created, true, response);
     }
 
@@ -51,6 +58,10 @@ public class DirectorController(IMediator mediator) : ApiController
         if (response is null)
             return CustomResponse((int)HttpStatusCode.BadRequest, false, null);
 
+        var @event = new DirectorUpdatedEvent(response.Id, response.FullName, response.UpdatedAt);
+
+        await _publishEndpoint.Publish(@event);
+
         return CustomResponse((int)HttpStatusCode.OK, true, response);
     }
 
@@ -64,6 +75,10 @@ public class DirectorController(IMediator mediator) : ApiController
 
         if (!response)
             return CustomResponse((int)HttpStatusCode.BadRequest, response);
+
+        var @event = new DirectorDeletedEvent(id.ToString());
+
+        await _publishEndpoint.Publish(@event);
 
         return CustomResponse((int)HttpStatusCode.OK, response);
     }
