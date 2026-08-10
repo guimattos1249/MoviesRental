@@ -2,12 +2,12 @@
 
 public static class EventBusConstants
 {
-    public const string CREATE_DVD_QUEUE = "create-dvd-queue";
-    public const string UPDATE_DVD_QUEUE = "update-dvd-queue";
-    public const string DELETE_DVD_QUEUE = "delete-dvd-queue";
-    public const string RENT_DVD_QUEUE = "rent-dvd-queue";
-    public const string RETURN_DVD_QUEUE = "return-dvd-queue";
-    public const string CREATE_DIRECTOR_QUEUE = "create-director-queue";
-    public const string DELETE_DIRECTOR_QUEUE = "delete-director-queue";
-    public const string UPDATE_DIRECTOR_QUEUE = "update-director-queue";
+    public const string CREATED_DVD_QUEUE = "created-dvd-queue";
+    public const string UPDATED_DVD_QUEUE = "updated-dvd-queue";
+    public const string DELETED_DVD_QUEUE = "deleted-dvd-queue";
+    public const string RENTED_DVD_QUEUE = "rented-dvd-queue";
+    public const string RETURNED_DVD_QUEUE = "returned-dvd-queue";
+    public const string CREATED_DIRECTOR_QUEUE = "created-director-queue";
+    public const string DELETED_DIRECTOR_QUEUE = "deleted-director-queue";
+    public const string UPDATED_DIRECTOR_QUEUE = "updated-director-queue";
 }
