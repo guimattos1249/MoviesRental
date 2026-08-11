@@ -1,6 +1,5 @@
 ﻿using FluentValidation;
 using MoviesRental.Core.ValidationMessages;
-using MoviesRental.Domain.Entities;
 using MoviesRental.Queries.Application.UseCases.Dvds.Commands.CreateDvd;
 
 namespace MoviesRental.Application.UseCases.Dvds.Commands.CreateDvd;
