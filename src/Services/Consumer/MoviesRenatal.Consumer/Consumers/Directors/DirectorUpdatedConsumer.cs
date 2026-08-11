@@ -5,10 +5,10 @@ using MoviesRental.Queries.Application.UseCases.Directors.Commands.UpdateDirecto
 
 namespace MoviesRenatal.Consumer.Consumers.Directors;
 
-public class DirectorUpdatedConsumer(IMediator mediator, ILogger<DirectorCreatedConsumer> logger) : IConsumer<DirectorUpdatedEvent>
+public class DirectorUpdatedConsumer(IMediator mediator, ILogger<DirectorUpdatedConsumer> logger) : IConsumer<DirectorUpdatedEvent>
 {
     private readonly IMediator _mediator = mediator;
-    private readonly ILogger<DirectorCreatedConsumer> _logger = logger;
+    private readonly ILogger<DirectorUpdatedConsumer> _logger = logger;
 
     public async Task Consume(ConsumeContext<DirectorUpdatedEvent> context)
     {

@@ -6,10 +6,10 @@ using MoviesRental.Queries.Application.UseCases.Directors.Commands.DeleteDirecto
 
 namespace MoviesRenatal.Consumer.Consumers.Directors;
 
-public class DirectorDeletedConsumer(IMediator mediator, ILogger<DirectorCreatedConsumer> logger) : IConsumer<DirectorDeletedEvent>
+public class DirectorDeletedConsumer(IMediator mediator, ILogger<DirectorDeletedConsumer> logger) : IConsumer<DirectorDeletedEvent>
 {
     private readonly IMediator _mediator = mediator;
-    private readonly ILogger<DirectorCreatedConsumer> _logger = logger;
+    private readonly ILogger<DirectorDeletedConsumer> _logger = logger;
 
     public async Task Consume(ConsumeContext<DirectorDeletedEvent> context)
     {
