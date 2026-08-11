@@ -9,7 +9,7 @@ namespace MoviesRenatal.Consumer.Consumers.Directors;
 public class DirectorDeletedConsumer(IMediator mediator, ILogger<DirectorCreatedConsumer> logger) : IConsumer<DirectorDeletedEvent>
 {
     private readonly IMediator _mediator = mediator;
-    private ILogger<DirectorCreatedConsumer> _logger = logger;
+    private readonly ILogger<DirectorCreatedConsumer> _logger = logger;
 
     public async Task Consume(ConsumeContext<DirectorDeletedEvent> context)
     {
