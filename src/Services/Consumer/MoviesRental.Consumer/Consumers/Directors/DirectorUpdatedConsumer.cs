@@ -3,7 +3,7 @@ using MediatR;
 using MoviesRental.Core.EventBus.Events;
 using MoviesRental.Queries.Application.UseCases.Directors.Commands.UpdateDirector;
 
-namespace MoviesRenatal.Consumer.Consumers.Directors;
+namespace MoviesRental.Consumer.Consumers.Directors;
 
 public class DirectorUpdatedConsumer(IMediator mediator, ILogger<DirectorUpdatedConsumer> logger) : IConsumer<DirectorUpdatedEvent>
 {

@@ -3,7 +3,7 @@ using MediatR;
 using MoviesRental.Core.EventBus.Events;
 using MoviesRental.Queries.Application.UseCases.Directors.Commands.CreateDirector;
 
-namespace MoviesRenatal.Consumer.Consumers.Directors;
+namespace MoviesRental.Consumer.Consumers.Directors;
 
 public class DirectorCreatedConsumer(IMediator mediator, ILogger<DirectorCreatedConsumer> logger) : IConsumer<DirectorCreatedEvent>
 {

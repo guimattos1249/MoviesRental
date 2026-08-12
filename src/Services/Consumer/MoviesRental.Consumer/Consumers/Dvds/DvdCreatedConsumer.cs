@@ -3,7 +3,7 @@ using MediatR;
 using MoviesRental.Core.EventBus.Events;
 using MoviesRental.Queries.Application.UseCases.Dvds.Commands.CreateDvd;
 
-namespace MoviesRenatal.Consumer.Consumers.Dvds;
+namespace MoviesRental.Consumer.Consumers.Dvds;
 
 public class DvdCreatedConsumer(IMediator mediator, ILogger<DvdCreatedConsumer> logger) : IConsumer<DvdCreatedEvent>
 {

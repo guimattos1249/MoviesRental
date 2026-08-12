@@ -4,7 +4,7 @@ using MongoDB.Driver;
 using MoviesRental.Core.EventBus.Events;
 using MoviesRental.Queries.Application.UseCases.Directors.Commands.DeleteDirector;
 
-namespace MoviesRenatal.Consumer.Consumers.Directors;
+namespace MoviesRental.Consumer.Consumers.Directors;
 
 public class DirectorDeletedConsumer(IMediator mediator, ILogger<DirectorDeletedConsumer> logger) : IConsumer<DirectorDeletedEvent>
 {

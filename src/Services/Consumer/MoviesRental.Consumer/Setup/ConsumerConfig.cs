@@ -1,13 +1,13 @@
 ﻿using MassTransit;
 using Microsoft.Extensions.Options;
-using MoviesRenatal.Consumer.Consumers.Directors;
-using MoviesRenatal.Consumer.Consumers.Dvds;
+using MoviesRental.Consumer.Consumers.Directors;
+using MoviesRental.Consumer.Consumers.Dvds;
 using MoviesRental.Core.EventBus;
 using MoviesRental.Queries.Application;
 using MoviesRental.Queries.Infrastructure;
 using MoviesRental.Queries.Infrastructure.Settings;
 
-namespace MoviesRenatal.Consumer.Setup;
+namespace MoviesRental.Consumer.Setup;
 
 public static class ConsumerConfig
 {

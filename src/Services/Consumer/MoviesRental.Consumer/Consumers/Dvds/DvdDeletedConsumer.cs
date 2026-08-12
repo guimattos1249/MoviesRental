@@ -3,7 +3,7 @@ using MediatR;
 using MoviesRental.Core.EventBus.Events;
 using MoviesRental.Queries.Application.UseCases.Dvds.Commands.DeleteDvd;
 
-namespace MoviesRenatal.Consumer.Consumers.Dvds;
+namespace MoviesRental.Consumer.Consumers.Dvds;
 
 public class DvdDeletedConsumer(IMediator mediator, ILogger<DvdDeletedConsumer> logger) : IConsumer<DvdDeletedEvent>
 {
@@ -33,5 +33,4 @@ public class DvdDeletedConsumer(IMediator mediator, ILogger<DvdDeletedConsumer> 
             throw;
         }
     }
-}
 }

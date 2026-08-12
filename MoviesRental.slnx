@@ -4,8 +4,9 @@
     <Project Path="src/BuildingBlocks/MoviesRental.Core/MoviesRental.Core.csproj" />
   </Folder>
   <Folder Name="/src/Services/" />
-  <Folder Name="/src/Services/Consumer/">
-    <Project Path="src/Services/Consumer/MoviesRenatal.Consumer/MoviesRenatal.Consumer.csproj" />
+  <Folder Name="/src/Services/Consumer/" />
+  <Folder Name="/src/Services/Consumer/MoviesRental.Consumer/">
+    <Project Path="src/Services/Consumer/MoviesRental.Consumer/MoviesRental.Consumer.csproj" />
   </Folder>
   <Folder Name="/src/Services/Publisher/" />
   <Folder Name="/src/Services/Publisher/API/">

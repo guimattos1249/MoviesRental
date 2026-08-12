@@ -4,7 +4,7 @@ using MoviesRental.Core.EventBus.Events;
 using MoviesRental.Queries.Application.UseCases.Dvds.Commands.RentDvd;
 using MoviesRental.Queries.Application.UseCases.Dvds.Commands.ReturnDvd;
 
-namespace MoviesRenatal.Consumer.Consumers.Dvds;
+namespace MoviesRental.Consumer.Consumers.Dvds;
 
 public class DvdReturnedConsumer(IMediator mediator, ILogger<DvdReturnedConsumer> logger) : IConsumer<DvdReturnedEvent>
 {

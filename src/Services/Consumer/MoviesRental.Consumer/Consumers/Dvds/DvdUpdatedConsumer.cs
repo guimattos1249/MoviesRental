@@ -3,7 +3,7 @@ using MediatR;
 using MoviesRental.Core.EventBus.Events;
 using MoviesRental.Queries.Application.UseCases.Dvds.Commands.UpdateDvd;
 
-namespace MoviesRenatal.Consumer.Consumers.Dvds;
+namespace MoviesRental.Consumer.Consumers.Dvds;
 
 public class DvdUpdatedConsumer(IMediator mediator, ILogger<DvdUpdatedConsumer> logger) : IConsumer<DvdUpdatedEvent>
 {
