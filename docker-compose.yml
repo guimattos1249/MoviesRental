@@ -1,0 +1,90 @@
+services:
+  cachedb:
+    image: redis:alpine
+    container_name: cachedb
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    networks:
+      - movies-rental-network
+
+  querydb:
+    image: mongo:latest
+    container_name: querydb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - movies-rental-network
+
+  writedb:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: writedb
+    restart: unless-stopped
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "1q2w3e4r@#$"
+      MSSQL_PID: "Developer"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    networks:
+      - movies-rental-network
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbitmq
+    restart: unless-stopped
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - movies-rental-network
+
+  moviesrental.api:
+    image: moviesrentalapi
+    build:
+      context: .
+      dockerfile: src/Services/Publisher/API/MoviesRental.API/Dockerfile
+    container_name: moviesrental-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Docker
+      ASPNETCORE_HTTP_PORTS: 8080
+    ports:
+      - "8000:8080"
+    depends_on:
+      - cachedb
+      - writedb
+      - querydb
+      - rabbitmq
+    networks:
+      - movies-rental-network
+
+  moviesrental.consumer:
+    image: moviesrentalconsumer
+    build:
+      context: .
+      dockerfile: src/Services/Consumer/MoviesRental.Consumer/Dockerfile
+    container_name: moviesrental-consumer
+    environment:
+      ASPNETCORE_ENVIRONMENT: Docker
+      ASPNETCORE_HTTP_PORTS: 8080
+    depends_on:
+      - querydb
+      - rabbitmq
+    networks:
+      - movies-rental-network
+
+networks:
+  movies-rental-network:
+    driver: bridge
+
+volumes:
+  mongo_data:
+  sqlserver_data:
+  rabbitmq_data:
