@@ -15,13 +15,7 @@ public class DvdsWriteRepository(MoviesRentalWriteContext context) : IDvdsWriteR
         return await _context.SaveChangesAsync() > 0;
     }
 
-    public async Task<bool> DeleteAsync(Guid Id)
-    {
-        await _context.Dvds
-            .Where(d => d.Id == Id)
-            .ExecuteDeleteAsync();
-        return await _context.SaveChangesAsync() > 0;
-    }
+    public async Task<bool> DeleteAsync(Guid Id) => await _context.Dvds.Where(d => d.Id == Id).ExecuteDeleteAsync() > 0;
 
     public async Task<Dvd> GetAsync(Guid Id) => await _context.Dvds.FindAsync(Id);
 

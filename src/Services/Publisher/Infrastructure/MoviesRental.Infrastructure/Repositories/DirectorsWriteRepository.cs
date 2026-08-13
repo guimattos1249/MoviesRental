@@ -15,11 +15,7 @@ public class DirectorsWriteRepository(MoviesRentalWriteContext context) : IDirec
         return await _context.SaveChangesAsync() > 0;
     }
 
-    public async Task<bool> DeleteAsync(Guid Id)
-    {
-        await _context.Directors.Where(d => d.Id == Id).ExecuteDeleteAsync();
-        return await _context.SaveChangesAsync() > 0;
-    }
+    public async Task<bool> DeleteAsync(Guid Id) => await _context.Directors.Where(d => d.Id == Id).ExecuteDeleteAsync() > 0;
 
     public async Task<Director> GetAsync(Guid Id) => await _context.Directors.FindAsync(Id);
 
