@@ -65,7 +65,7 @@ public class DirectorController(IMediator mediator, IPublishEndpoint publishEndp
         return CustomResponse((int)HttpStatusCode.OK, true, response);
     }
 
-    [HttpDelete("DeleteDirector")]
+    [HttpDelete("DeleteDirector/{id:guid}")]
     [ProducesResponseType(typeof(BaseResponse), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
     public async Task<IActionResult> DeleteDirector([FromRoute] Guid id)
