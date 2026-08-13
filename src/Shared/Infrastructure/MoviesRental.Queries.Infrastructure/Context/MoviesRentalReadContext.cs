@@ -11,7 +11,7 @@ public class MoviesRentalReadContext : IMoviesRentalReadContext
         var client = new MongoClient(settings.ConnectionString);
         var database = client.GetDatabase(settings.DatabaseName);
         Directors = database.GetCollection<Director>(settings.DirectorsCollection);
-        Dvds = database.GetCollection<Dvd>(settings.DirectorsCollection);
+        Dvds = database.GetCollection<Dvd>(settings.DvdsCollection);
     }
 
     public IMongoCollection<Dvd> Dvds { get; }

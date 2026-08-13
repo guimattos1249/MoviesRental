@@ -13,8 +13,6 @@ using System.Net;
 
 namespace MoviesRental.API.Controllers;
 
-[Route("api/[controller]")]
-[ApiController]
 public class DvdsController(
     IMediator mediator,
     IPublishEndpoint publishEndpoint,
@@ -35,7 +33,7 @@ public class DvdsController(
 
         var query = new GetDvdQuery(title);
 
-        var reponse = await _mediator.Send(query, HttpContext.RequestAborted);
+        response = await _mediator.Send(query, HttpContext.RequestAborted);
         if (response is null)
             return CustomResponse((int)HttpStatusCode.NotFound, false);
 

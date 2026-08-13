@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using MoviesRental.Application.UseCases.Directors.Commands.CreateDirector;
 using MoviesRental.Application.UseCases.Directors.Commands.DeleteDirector;
+using MoviesRental.Application.UseCases.Directors.Commands.UpdateDirector;
 using MoviesRental.Core;
 using MoviesRental.Core.EventBus.Events;
 using MoviesRental.Queries.Application.UseCases.Directors.Queries.GetDirector;
@@ -51,7 +52,7 @@ public class DirectorController(IMediator mediator, IPublishEndpoint publishEndp
     [ProducesResponseType(typeof(BaseResponse), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
     public async Task<IActionResult> UpdateDirector(
-        [FromBody] CreateDirectorCommand command)
+        [FromBody] UpdateDirectorCommand command)
     {
         var response = await _mediator.Send(command, HttpContext.RequestAborted);
 
