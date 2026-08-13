@@ -47,7 +47,7 @@ public class DirectorController(IMediator mediator, IPublishEndpoint publishEndp
         return CustomResponse((int)HttpStatusCode.Created, true, response);
     }
 
-    [HttpPost("UpdateDirector")]
+    [HttpPut("UpdateDirector")]
     [ProducesResponseType(typeof(BaseResponse), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
     public async Task<IActionResult> UpdateDirector(
@@ -65,7 +65,7 @@ public class DirectorController(IMediator mediator, IPublishEndpoint publishEndp
         return CustomResponse((int)HttpStatusCode.OK, true, response);
     }
 
-    [HttpPost("DeleteDirector")]
+    [HttpDelete("DeleteDirector")]
     [ProducesResponseType(typeof(BaseResponse), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
     public async Task<IActionResult> DeleteDirector([FromRoute] Guid id)
