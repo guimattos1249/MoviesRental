@@ -1,6 +1,5 @@
 ﻿using MassTransit;
 using MediatR;
-using MongoDB.Driver;
 using MoviesRental.Core.EventBus.Events;
 using MoviesRental.Queries.Application.UseCases.Directors.Commands.DeleteDirector;
 
